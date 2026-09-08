@@ -47,7 +47,7 @@ export function Foundations() {
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <Reveal as="p" className="label text-signal">
-              03 — The System
+              04 — The System
             </Reveal>
             <Reveal as="h2" className="mt-6 display-xl text-paper text-balance" delay={80}>
               Foundations

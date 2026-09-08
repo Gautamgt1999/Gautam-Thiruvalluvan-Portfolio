@@ -2,6 +2,7 @@ import { SiteNav } from '@/components/portfolio/site-nav'
 import { Hero } from '@/components/portfolio/hero'
 import { About } from '@/components/portfolio/about'
 import { Expertise } from '@/components/portfolio/expertise'
+import { Experience } from '@/components/portfolio/experience'
 import { Foundations } from '@/components/portfolio/foundations'
 
 export default function Page() {
@@ -11,6 +12,7 @@ export default function Page() {
       <Hero />
       <About />
       <Expertise />
+      <Experience />
       <Foundations />
     </main>
   )
