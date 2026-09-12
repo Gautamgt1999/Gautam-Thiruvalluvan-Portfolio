@@ -1,6 +1,24 @@
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
+
 
 /*
   GAUTAM THIRUVALLUVAN — Editorial Portfolio Design System
@@ -204,5 +222,971 @@
     html {
       scroll-behavior: auto;
     }
+  }
+}
+/* =========================================================
+   GAUTAM PORTFOLIO — MOTION SYSTEM
+   ========================================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ---------------------------------------------------------
+   BASE REVEAL
+   --------------------------------------------------------- */
+
+.scroll-reveal {
+  opacity: 0;
+  transition:
+    opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    clip-path 1100ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform, clip-path;
+}
+
+/* Fade */
+
+.reveal-fade {
+  transform: translateY(0);
+}
+
+/* Slide up */
+
+.reveal-slide-up {
+  transform: translateY(60px);
+}
+
+/* Slide left */
+
+.reveal-slide-left {
+  transform: translateX(80px);
+}
+
+/* Slide right */
+
+.reveal-slide-right {
+  transform: translateX(-80px);
+}
+
+/* Scale */
+
+.reveal-scale {
+  transform: scale(0.98);
+}
+
+/* Text reveal */
+
+.reveal-text {
+  transform: translateY(35px);
+  clip-path: inset(100% 0 0 0);
+}
+
+/* Image reveal */
+
+.reveal-image {
+  transform: scale(0.98);
+  clip-path: inset(8% 0 0 0);
+}
+
+/* Visible state */
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translate(0) scale(1);
+  clip-path: inset(0 0 0 0);
+}
+
+
+/* =========================================================
+   EDITORIAL SECTION
+   ========================================================= */
+
+.editorial-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 12vh 6vw;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+   ========================================================= */
+
+.editorial-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  margin-bottom: 10vh;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 24px;
+}
+
+.editorial-section-number {
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.editorial-section-title {
+  font-size: clamp(3.5rem, 9vw, 10rem);
+  line-height: 0.82;
+  letter-spacing: -0.06em;
+  font-weight: 400;
+  margin: 0;
+}
+/* =========================================================
+   CERTIFICATIONS — EDITORIAL CREDENTIAL ARCHIVE
+   ========================================================= */
+
+.certifications-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 10vh 6vw 8vh;
+  background: #080808;
+  color: #f5f5f0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.certifications-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  box-sizing: border-box;
+}
+
+.certifications-index,
+.certifications-label {
+  font-size: 0.68rem;
+  line-height: 1.2;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.certifications-index {
+  opacity: 0.65;
+}
+
+.certifications-label {
+  opacity: 0.35;
+}
+
+/* ---------------------------------------------------------
+   TITLE AREA
+   --------------------------------------------------------- */
+
+.certifications-title-wrap {
+  width: 100%;
+  max-width: 1400px;
+  margin: 10vh auto 8vh;
+  box-sizing: border-box;
+}
+
+.certifications-title {
+  margin: 0;
+  max-width: 100%;
+  font-size: clamp(4rem, 12vw, 12rem);
+  line-height: 0.78;
+  letter-spacing: -0.075em;
+  font-weight: 400;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.certifications-intro {
+  width: min(100%, 620px);
+  margin: 6vh 0 0 auto;
+  font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  color: rgba(245, 245, 240, 0.48);
+  box-sizing: border-box;
+}
+
+/* ---------------------------------------------------------
+   CERTIFICATION LIST
+   --------------------------------------------------------- */
+
+.certifications-list {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.certification-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 8% minmax(0, 1fr) 22%;
+  align-items: center;
+  gap: 30px;
+
+  padding: 30px 0;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-sizing: border-box;
+
+  transition:
+    padding 500ms cubic-bezier(0.22, 1, 0.36, 1),
+    background 400ms ease;
+}
+
+.certifications-list > *:last-child .certification-row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.certification-row:hover {
+  padding-left: 14px;
+  padding-right: 14px;
+  background: rgba(255, 255, 255, 0.018);
+}
+
+.certification-number {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  opacity: 0.35;
+}
+
+.certification-main {
+  min-width: 0;
+}
+
+.certification-name {
+  margin: 0;
+  font-size: clamp(1.3rem, 2.2vw, 2.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+  font-weight: 400;
+  overflow-wrap: break-word;
+}
+
+.certification-meta {
+  margin-top: 12px;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: rgba(245, 245, 240, 0.38);
+}
+
+.certification-detail {
+  min-width: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+
+  font-size: 0.65rem;
+  line-height: 1.4;
+  letter-spacing: 0.16em;
+  text-align: right;
+  text-transform: uppercase;
+
+  color: rgba(245, 245, 240, 0.42);
+
+  overflow-wrap: anywhere;
+}
+
+.certification-arrow {
+  flex: 0 0 auto;
+  font-size: 1rem;
+  opacity: 0.5;
+
+  transition:
+    transform 400ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 300ms ease;
+}
+
+.certification-row:hover .certification-arrow {
+  transform: translate(5px, -5px);
+  opacity: 1;
+}
+
+/* ---------------------------------------------------------
+   RESUME LINK
+   --------------------------------------------------------- */
+
+.certifications-resume {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 6vh;
+}
+
+.editorial-resume-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 30px;
+
+  padding: 18px 0;
+
+  color: #f5f5f0;
+  text-decoration: none;
+
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+
+  transition:
+    gap 400ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 300ms ease;
+}
+
+.editorial-resume-link:hover {
+  gap: 45px;
+  border-color: #f5f5f0;
+}
+
+/* ---------------------------------------------------------
+   TABLET
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+  .certifications-section {
+    padding: 9vh 5vw 7vh;
+  }
+
+  .certifications-title-wrap {
+    margin-top: 8vh;
+    margin-bottom: 7vh;
+  }
+
+  .certifications-title {
+    font-size: clamp(4rem, 15vw, 9rem);
+  }
+
+  .certifications-intro {
+    width: min(100%, 560px);
+    margin-top: 5vh;
+  }
+
+  .certification-row {
+    grid-template-columns: 8% minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .certification-detail {
+    grid-column: 2;
+    justify-content: flex-start;
+    text-align: left;
+    margin-top: 4px;
+  }
+}
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 600px) {
+
+  .certifications-section {
+    padding: 8vh 6vw 6vh;
+  }
+
+  .certifications-header {
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .certifications-label {
+    text-align: right;
+    white-space: normal;
+  }
+
+  .certifications-title-wrap {
+    margin-top: 7vh;
+    margin-bottom: 6vh;
+  }
+
+  .certifications-title {
+    font-size: clamp(3.5rem, 19vw, 7rem);
+    line-height: 0.82;
+  }
+
+  .certifications-intro {
+    width: 100%;
+    margin-top: 4vh;
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .certification-row {
+    grid-template-columns: 35px minmax(0, 1fr);
+    gap: 14px;
+    padding: 24px 0;
+  }
+
+  .certification-number {
+    padding-top: 4px;
+  }
+
+  .certification-name {
+    font-size: 1.25rem;
+    line-height: 1.1;
+  }
+
+  .certification-meta {
+    font-size: 0.55rem;
+    line-height: 1.5;
+  }
+
+  .certification-detail {
+    grid-column: 2;
+    font-size: 0.55rem;
+    line-height: 1.5;
+    letter-spacing: 0.12em;
+  }
+
+  .certifications-resume {
+    justify-content: flex-start;
+    margin-top: 5vh;
+  }
+}
+
+/* =========================================================
+   EDUCATION — EDITORIAL ACADEMIC FRAME
+   ========================================================= */
+
+.education-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 10vh 6vw 5vh;
+  background: #080808;
+  color: #f5f5f0;
+  overflow: hidden;
+}
+
+
+/* HEADER */
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.education-index,
+.education-header-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.education-index {
+  opacity: 0.65;
+}
+
+.education-header-label {
+  opacity: 0.35;
+}
+
+
+/* LARGE YEAR */
+
+.education-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 9vh;
+  margin-bottom: 5vh;
+}
+
+.education-year-large {
+  font-size: clamp(4rem, 12vw, 13rem);
+  line-height: 0.72;
+  letter-spacing: -0.08em;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.education-year-large span {
+  display: inline-block;
+  margin: 0 0.08em;
+  opacity: 0.25;
+}
+
+.education-period {
+  margin-bottom: 10px;
+  font-size: 0.62rem;
+  line-height: 1.6;
+  letter-spacing: 0.22em;
+  text-align: right;
+  text-transform: uppercase;
+  opacity: 0.4;
+}
+
+
+/* MAIN CONTENT */
+
+.education-content {
+  display: grid;
+  grid-template-columns: 15% 1fr 15%;
+  min-height: 42vh;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+
+/* LEFT */
+
+.education-side {
+  padding-top: 45px;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.education-small-label {
+  display: block;
+  margin-bottom: 30px;
+  font-size: 0.62rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  opacity: 0.4;
+}
+
+.education-degree-small {
+  font-size: clamp(1.5rem, 3vw, 3.5rem);
+  letter-spacing: -0.05em;
+}
+
+
+/* CENTER */
+
+.education-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8vh 6vw;
+}
+
+.education-degree {
+  margin: 0;
+  font-size: clamp(4rem, 9vw, 10rem);
+  line-height: 0.78;
+  letter-spacing: -0.075em;
+  font-weight: 400;
+}
+
+.education-university {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 7vh;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.45;
+}
+
+
+/* RIGHT */
+
+.education-result {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 45px 0 45px 25px;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.education-result-number {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  opacity: 0.35;
+}
+
+.education-result-text {
+  font-size: clamp(1.3rem, 2.5vw, 2.8rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  text-align: right;
+}
+
+
+/* BOTTOM */
+
+.education-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  margin-top: 25px;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.3;
+}
+
+.education-bottom span:nth-child(2) {
+  text-align: center;
+}
+
+.education-bottom span:nth-child(3) {
+  text-align: right;
+}
+
+
+/* HOVER / EDITORIAL MOVEMENT */
+
+.education-content {
+  transition: background 400ms ease;
+}
+
+.education-content:hover {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.education-degree {
+  transition:
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.education-content:hover .education-degree {
+  transform: translateX(10px);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  .education-section {
+    padding: 9vh 6vw 5vh;
+  }
+
+  .education-header {
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .education-hero {
+    display: block;
+    margin-top: 8vh;
+  }
+
+  .education-year-large {
+    font-size: clamp(4rem, 20vw, 8rem);
+  }
+
+  .education-period {
+    margin-top: 35px;
+    text-align: left;
+  }
+
+  .education-content {
+    grid-template-columns: 1fr;
+  }
+
+  .education-side {
+    padding: 30px 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .education-main {
+    padding: 8vh 0;
+  }
+
+  .education-degree {
+    font-size: clamp(4rem, 17vw, 8rem);
+  }
+
+  .education-university {
+    display: block;
+    margin-top: 45px;
+  }
+
+  .education-university span {
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .education-result {
+    padding: 30px 0;
+    border-left: none;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    align-items: flex-start;
+  }
+
+  .education-result-text {
+    margin-top: 35px;
+    text-align: left;
+  }
+
+  .education-bottom {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 25px;
+  }
+
+  .education-bottom span,
+  .education-bottom span:nth-child(2),
+  .education-bottom span:nth-child(3) {
+    text-align: left;
+  }
+}
+
+
+/* =========================================================
+   CONTACT — CINEMATIC CLOSING FRAME
+   ========================================================= */
+
+.contact-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 10vh 6vw 4vh;
+  background: #080808;
+  color: #f5f5f0;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-main {
+  margin-top: 11vh;
+}
+
+.contact-kicker {
+  margin-bottom: 35px;
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  opacity: 0.45;
+}
+
+.contact-title {
+  margin: 0;
+  font-size: clamp(5rem, 13vw, 15rem);
+  line-height: 0.75;
+  letter-spacing: -0.08em;
+  font-weight: 400;
+}
+
+.contact-title span {
+  display: block;
+}
+
+.contact-identity {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  margin-top: 10vh;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+.contact-name {
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.contact-role {
+  margin-top: 9px;
+  font-size: 0.67rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.45;
+}
+
+.contact-availability {
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.4;
+}
+
+.contact-links-wrapper {
+  margin-top: 7vh;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+.contact-link-row {
+  display: grid;
+  grid-template-columns: 60px 180px 1fr 40px;
+  align-items: center;
+  gap: 25px;
+  min-height: 75px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    padding 400ms cubic-bezier(0.22,1,0.36,1),
+    background 300ms ease;
+}
+
+.contact-link-row:hover {
+  padding-left: 22px;
+  padding-right: 22px;
+  background: rgba(255,255,255,0.025);
+}
+
+.contact-link-number {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  opacity: 0.35;
+}
+
+.contact-link-name {
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.contact-link-value {
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  opacity: 0.45;
+}
+
+.contact-link-arrow {
+  text-align: right;
+  font-size: 1.1rem;
+  transition: transform 300ms ease;
+}
+
+.contact-link-row:hover .contact-link-arrow {
+  transform: translate(4px, -4px);
+}
+
+.contact-resume-wrapper {
+  margin-top: 7vh;
+}
+
+.contact-resume {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 90px;
+  padding: 19px 26px;
+  border: 1px solid rgba(255,255,255,0.45);
+  color: inherit;
+  text-decoration: none;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition:
+    background 300ms ease,
+    color 300ms ease,
+    transform 300ms ease;
+}
+
+.contact-resume:hover {
+  background: #f5f5f0;
+  color: #080808;
+  transform: translateY(-3px);
+}
+
+.contact-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-top: auto;
+  padding-top: 8vh;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.35;
+}
+
+.contact-footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contact-footer a:hover {
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .certifications-section,
+  .contact-section {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+  .certifications-header,
+  .contact-header {
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .certifications-title-wrap {
+    display: block;
+    margin-top: 9vh;
+  }
+
+  .certifications-intro {
+    margin-top: 35px;
+  }
+
+  .certification-row {
+    grid-template-columns: 45px 1fr;
+    gap: 15px;
+    padding: 30px 0;
+  }
+
+  .certification-detail {
+    grid-column: 2;
+    justify-content: flex-start;
+  }
+
+  .certification-row:hover {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .contact-title {
+    font-size: clamp(4rem, 18vw, 8rem);
+  }
+
+  .contact-identity {
+    display: block;
+  }
+
+  .contact-availability {
+    margin-top: 30px;
+  }
+
+  .contact-link-row {
+    grid-template-columns: 35px 1fr 30px;
+    gap: 12px;
+    min-height: 70px;
+  }
+
+  .contact-link-value {
+    display: none;
+  }
+
+  .contact-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
   }
 }

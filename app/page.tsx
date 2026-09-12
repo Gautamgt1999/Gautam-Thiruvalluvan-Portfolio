@@ -1,10 +1,14 @@
-import { SiteNav } from '@/components/portfolio/site-nav'
-import { Hero } from '@/components/portfolio/hero'
-import { About } from '@/components/portfolio/about'
-import { Expertise } from '@/components/portfolio/expertise'
-import { Experience } from '@/components/portfolio/experience'
-import { Projects } from '@/components/portfolio/projects'
-import { Foundations } from '@/components/portfolio/foundations'
+import { SiteNav } from "@/components/portfolio/site-nav";
+import { Hero } from "@/components/portfolio/hero";
+import { About } from "@/components/portfolio/about";
+import { Expertise } from "@/components/portfolio/expertise";
+import { Experience } from "@/components/portfolio/experience";
+import { Projects } from "@/components/portfolio/projects";
+
+import Certifications from "@/components/certification";
+import { Education } from "@/components/Education";
+import Contact from "@/components/Contact";
+
 
 export default function Page() {
   return (
@@ -15,7 +19,9 @@ export default function Page() {
       <Expertise />
       <Experience />
       <Projects />
-      <Foundations />
+      <Certifications />
+      <Education />
+      <Contact />
     </main>
-  )
+  );
 }
